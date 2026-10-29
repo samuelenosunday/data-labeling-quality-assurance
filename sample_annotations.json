@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "item_id": "item_001",
+      "annotations": {
+        "annotator_A": "positive",
+        "annotator_B": "positive",
+        "annotator_C": "positive"
+      }
+    },
+    {
+      "item_id": "item_002",
+      "annotations": {
+        "annotator_A": "negative",
+        "annotator_B": "negative",
+        "annotator_C": "negative"
+      }
+    },
+    {
+      "item_id": "item_003",
+      "annotations": {
+        "annotator_A": "positive",
+        "annotator_B": "negative",
+        "annotator_C": "neutral"
+      }
+    },
+    {
+      "item_id": "item_004",
+      "annotations": {
+        "annotator_A": "positive",
+        "annotator_B": "positive",
+        "annotator_C": "positive"
+      }
+    },
+    {
+      "item_id": "item_005",
+      "annotations": {
+        "annotator_A": "neutral",
+        "annotator_B": "positive",
+        "annotator_C": "negative"
+      }
+    },
+    {
+      "item_id": "item_006",
+      "annotations": {
+        "annotator_A": "negative",
+        "annotator_B": "negative",
+        "annotator_C": "neutral"
+      }
+    }
+  ]
+}
