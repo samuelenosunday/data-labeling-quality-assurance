@@ -30,7 +30,6 @@ It's the kind of check a senior annotator or QA reviewer runs to guarantee annot
 ## Input Format
 
 The tool reads a JSON file structured like this:
-
 ```json
 {
   "items": [
@@ -52,25 +51,34 @@ The tool reads a JSON file structured like this:
     }
   ]
 }
+```
 
-Key structure:
+**Key structure:**
+- `items` is a list
+- Each item has an `item_id` and an `annotations` dict
+- `annotations` maps annotator names → their label for that item
 
-items is a list
+Labels can be any string: `"positive"`, `"negative"`, `"cat"`, `"dog"`, `"relevant"`, `"irrelevant"`, etc.
 
-Each item has an item_id and an annotations dict
+---
 
-annotations maps annotator names → their label for that item
+## Running the Tool
 
-Labels can be any string: "positive", "negative", "cat", "dog", "relevant", "irrelevant", etc.
-
-Running the Tool
+```bash
 python qa_report.py
+```
 
 Optionally pass a custom file:
-bash
-python qa_report.py my_annotations.json
 
-Output Example
+```bash
+python qa_report.py my_annotations.json
+```
+
+---
+
+## Output Example
+
+```
 ==================================================
 ANNOTATION QA REPORT
 ==================================================
@@ -96,36 +104,43 @@ annotator_C: 0.57  ⚠️ (potential outlier)
 item_003: 2/3 disagree
 item_005: 2/3 disagree
 ==================================================
+```
 
-Files in This Repo
-File	Purpose
-qa_report.py	Main QA analysis script
-sample_annotations.json	Example annotation dataset
-README.md	This documentation
+---
 
-Tech Stack
-Language: Python 3
+## Files in This Repo
 
-Dependencies: None (standard library only)
+| File | Purpose |
+|---|---|
+| `qa_report.py` | Main QA analysis script |
+| `sample_annotations.json` | Example annotation dataset |
+| `README.md` | This documentation |
 
-Data format: JSON
+---
 
-Future Improvements
-Support for Fleiss' Kappa (3+ annotators at once)
+## Tech Stack
 
-Krippendorff's Alpha (for ordinal labels)
+- **Language:** Python 3
+- **Dependencies:** None (standard library only)
+- **Data format:** JSON
 
-CSV export of the QA report
+---
 
-Streamlit dashboard for interactive exploration
+## Future Improvements
 
-About the Author
-Samuel Eno Sunday — AI Training Specialist & LLM Quality Analyst
+- Support for Fleiss' Kappa (3+ annotators at once)
+- Krippendorff's Alpha (for ordinal labels)
+- CSV export of the QA report
+- Streamlit dashboard for interactive exploration
 
-LinkedIn: linkedin.com/in/samuelenosunday001
+---
 
-GitHub: github.com/samuelenosunday
+## About the Author
 
-Email: samuelenosunday@gmail.com
+**Samuel Eno Sunday** — AI Training Specialist & LLM Quality Analyst
 
-Open to remote contract, part-time, and project-based AI training roles.
+- LinkedIn: [linkedin.com/in/samuelenosunday001](https://www.linkedin.com/in/samuelenosunday001/)
+- GitHub: [github.com/samuelenosunday](https://github.com/samuelenosunday)
+- Email: samuelenosunday@gmail.com
+
+*Open to remote contract, part-time, and project-based AI training roles.*
