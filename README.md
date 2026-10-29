@@ -52,3 +52,80 @@ The tool reads a JSON file structured like this:
     }
   ]
 }
+
+Key structure:
+
+items is a list
+
+Each item has an item_id and an annotations dict
+
+annotations maps annotator names → their label for that item
+
+Labels can be any string: "positive", "negative", "cat", "dog", "relevant", "irrelevant", etc.
+
+Running the Tool
+python qa_report.py
+
+Optionally pass a custom file:
+bash
+python qa_report.py my_annotations.json
+
+Output Example
+==================================================
+ANNOTATION QA REPORT
+==================================================
+Total items: 5
+Annotators: annotator_A, annotator_B, annotator_C
+
+--- INTER-ANNOTATOR AGREEMENT (Cohen's Kappa) ---
+annotator_A vs annotator_B: 0.83  (Almost perfect)
+annotator_A vs annotator_C: 0.55  (Moderate)
+annotator_B vs annotator_C: 0.60  (Moderate)
+
+--- PER-ANNOTATOR LABEL DISTRIBUTION ---
+annotator_A: positive=3, negative=2, neutral=0
+annotator_B: positive=3, negative=2, neutral=0
+annotator_C: positive=2, negative=1, neutral=2
+
+--- PER-ANNOTATOR AVERAGE AGREEMENT ---
+annotator_A: 0.69
+annotator_B: 0.71
+annotator_C: 0.57  ⚠️ (potential outlier)
+
+--- PER-ITEM DISAGREEMENT ---
+item_003: 2/3 disagree
+item_005: 2/3 disagree
+==================================================
+
+Files in This Repo
+File	Purpose
+qa_report.py	Main QA analysis script
+sample_annotations.json	Example annotation dataset
+README.md	This documentation
+
+Tech Stack
+Language: Python 3
+
+Dependencies: None (standard library only)
+
+Data format: JSON
+
+Future Improvements
+Support for Fleiss' Kappa (3+ annotators at once)
+
+Krippendorff's Alpha (for ordinal labels)
+
+CSV export of the QA report
+
+Streamlit dashboard for interactive exploration
+
+About the Author
+Samuel Eno Sunday — AI Training Specialist & LLM Quality Analyst
+
+LinkedIn: linkedin.com/in/samuelenosunday001
+
+GitHub: github.com/samuelenosunday
+
+Email: samuelenosunday@gmail.com
+
+Open to remote contract, part-time, and project-based AI training roles.
